@@ -9,15 +9,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post('/test', (req, res) => {
-  res.json({ message: 'test route works' });
-});
-
 app.get('/', (req, res) => {
   res.send('Suraksha-XR backend is running');
 });
 
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/modules', require('./routes/moduleRoutes'));
+app.use('/api/attempts', require('./routes/attemptRoutes'));
+app.use('/api/certificates', require('./routes/certificateRoutes'));
+app.use('/api/admin', require('./routes/adminRoutes'));
+app.use('/api/sync', require('./routes/syncRoutes'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
