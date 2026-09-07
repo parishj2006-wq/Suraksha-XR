@@ -70,7 +70,7 @@ Administrators can:
 
 
 
-# 🧩 Core Components
+# Core Components
 
 
 
