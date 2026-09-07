@@ -1,8 +1,8 @@
-\# 🛡️ SURAKSHA-XR
+ # SURAKSHA-XR
 
 
 
-\### AR-Based Vocational Training Simulator for Industrial Safety
+# AR-Based Vocational Training Simulator for Industrial Safety
 
 
 
@@ -14,7 +14,7 @@ procedures in simulated mining and manufacturing environments.
 
 
 
-\## 🎯 Problem
+# Problem
 
 
 
@@ -26,7 +26,7 @@ experience emergency situations.
 
 
 
-\## 💡 Solution
+# 💡 Solution
 
 
 
@@ -70,25 +70,25 @@ Administrators can:
 
 
 
-\## 🧩 Core Components
+# 🧩 Core Components
 
 
 
-\- 📱 Android AR Training Application
+\-  Android AR Training Application
 
-\- 🌐 Web-based Admin Dashboard
+\-  Web-based Admin Dashboard
 
-\- ⚙️ Node.js + Express Backend
+\-  Node.js + Express Backend
 
-\- 🗄️ MongoDB Database
+\-  MongoDB Database
 
-\- 🤖 AI-based Competency Analysis
+\-  AI-based Competency Analysis
 
-\- 🎫 Digital Certificate \& QR Verification
+\-  Digital Certificate \& QR Verification
 
 
 
-\## 🏗️ Project Structure
+# Project Structure
 
 
 
