@@ -26,7 +26,7 @@ experience emergency situations.
 
 
 
-# 💡 Solution
+# Solution
 
 
 
