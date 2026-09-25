@@ -23,8 +23,10 @@ Base URL (local): http://localhost:5000
 - GET /api/certificates/verify/:id - public - returns certificate details
 
 ## Admin/Dashboard
-- GET /api/admin/stats - requires Auth header - returns: { totalWorkers, totalModules, totalAttempts, passRate }
-- GET /api/admin/activity - requires Auth header - returns last 10 attempts with user/module details
+- GET /api/admin/stats - requires Auth header - returns: { totalWorkers, totalModules, totalAttempts, passRate, avgScore, avgResponseTime }
+- GET /api/admin/recent-activity - requires Auth header - returns last 10 attempts with user/module details
+- GET /api/admin/trainees - requires Auth header - returns per-trainee stats: array of { userId, name, email, sessions, avgScore, lastTraining, status }
+- GET /api/admin/trends - requires Auth header - returns 7-day aggregated data: array of { date, avgScore, avgResponseTime }
 
 ## Sync
 - POST /api/sync - requires Auth header - body: { attempts: [ {module, score, passed, timeTakenSeconds, mistakes}, ... ] }

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const authMiddleware = require('../middleware/authMiddleware');
 const {
   getDashboardStats,
   getRecentActivity,
@@ -7,9 +8,9 @@ const {
   getWeeklyTrends
 } = require('../controllers/adminController');
 
-router.get('/stats', getDashboardStats);
-router.get('/recent-activity', getRecentActivity);
-router.get('/trainees', getTraineeList);
-router.get('/trends', getWeeklyTrends);
+router.get('/stats', authMiddleware, getDashboardStats);
+router.get('/recent-activity', authMiddleware, getRecentActivity);
+router.get('/trainees', authMiddleware, getTraineeList);
+router.get('/trends', authMiddleware, getWeeklyTrends);
 
 module.exports = router;
