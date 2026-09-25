@@ -40,17 +40,21 @@ app.get('/health', (req, res) => {
 });
 
 // ---------- Routes ----------
-// Adjust these paths to match your actual route files
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/modules', require('./routes/modules'));
-app.use('/api/attempts', require('./routes/attempts'));
-app.use('/api/certificates', require('./routes/certificates'));
-app.use('/api/admin', require('./routes/admin'));
-app.use('/api/sync', require('./routes/sync'));
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/modules', require('./routes/moduleRoutes'));
+app.use('/api/attempts', require('./routes/attemptRoutes'));
+app.use('/api/certificates', require('./routes/certificateRoutes'));
+app.use('/api/admin', require('./routes/adminRoutes'));
+app.use('/api/sync', require('./routes/syncRoutes'));
 
 // ---------- MongoDB Connection ----------
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI || process.env.MONGO_URI;
+
+if (!MONGODB_URI) {
+  console.error('ERROR: No MongoDB URI found in .env (expected MONGO_URI or MONGODB_URI)');
+  process.exit(1);
+}
 
 mongoose
   .connect(MONGODB_URI)

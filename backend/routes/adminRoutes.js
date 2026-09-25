@@ -1,9 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const protect = require('../middleware/authMiddleware');
-const { getDashboardStats, getRecentActivity } = require('../controllers/adminController');
+const {
+  getDashboardStats,
+  getRecentActivity,
+  getTraineeList,
+  getWeeklyTrends
+} = require('../controllers/adminController');
 
-router.get('/stats', protect, getDashboardStats);
-router.get('/activity', protect, getRecentActivity);
+router.get('/stats', getDashboardStats);
+router.get('/recent-activity', getRecentActivity);
+router.get('/trainees', getTraineeList);
+router.get('/trends', getWeeklyTrends);
 
 module.exports = router;
